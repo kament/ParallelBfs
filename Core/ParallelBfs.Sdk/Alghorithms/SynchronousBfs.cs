@@ -1,6 +1,7 @@
 ﻿namespace ParallelBfs.Sdk.Alghorithms
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
 
     using Helpers;
@@ -34,7 +35,7 @@
             while (nodesToBeVisited.Count != 0)
             {
                 int nodeToVisit = nodesToBeVisited.Dequeue();
-
+                
                 if (NotAlreadyVisited(nodeToVisit))
                 {
                     MarkAsVisited(nodeToVisit);
@@ -48,7 +49,9 @@
 
         private void AddAllNeighboursToTheQueue(IEnumerable<int> neighbourNodes)
         {
-            neighbourNodes.ForEach(n => this.nodesToBeVisited.Enqueue(n));
+            neighbourNodes
+                .Where(n => NotAlreadyVisited(n))
+                .ForEach(n => this.nodesToBeVisited.Enqueue(n));
         }
 
         private void MarkAsVisited(int nodeToVisit)
