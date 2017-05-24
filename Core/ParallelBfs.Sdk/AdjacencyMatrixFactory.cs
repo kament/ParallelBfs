@@ -6,7 +6,7 @@
 
     using UserInputs;
 
-    public class AdjacencyMatrixPopulator
+    public class AdjacencyMatrixFactory
     {
         public AdjacencyMatrix Create(IUserInput input)
         {

@@ -29,8 +29,8 @@
         {
             IUserInput input = new FileUserInput("C:\\Users\\Kamen\\Desktop\\RSA\\ParallelBfs\\ParallelBfs\\TestFiles\\Test1.txt");
 
-            AdjacencyMatrixPopulator populator = new AdjacencyMatrixPopulator();
-            AdjacencyMatrix matrix = populator.Create(input);
+            AdjacencyMatrixFactory factory = new AdjacencyMatrixFactory();
+            AdjacencyMatrix matrix = factory.Create(input);
 
             return matrix;
         }
