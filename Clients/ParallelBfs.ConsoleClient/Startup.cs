@@ -27,7 +27,7 @@
 
         private static AdjacencyMatrix CreateMetrix()
         {
-            IUserInput input = new FileUserInput("C:\\Users\\Kamen\\Desktop\\RSA\\ParallelBfs\\ParallelBfs\\TestFiles\\Test1.txt");
+            IUserInput input = new FileUserInput("C:\\Users\\Kamen\\Desktop\\RSA\\ParallelBfs\\ParallelBfs\\TestFiles\\Test3.txt");
 
             AdjacencyMatrixFactory factory = new AdjacencyMatrixFactory();
             AdjacencyMatrix matrix = factory.Create(input);
@@ -45,7 +45,7 @@
 
         private static bool TraverseMatrix(AdjacencyMatrix matrix)
         {
-            SynchronousBfs bfsAlghorithm = new SynchronousBfs();
+            AsynchronousBfs bfsAlghorithm = new AsynchronousBfs();
             bool result = bfsAlghorithm.Search(matrix);
 
             return result;

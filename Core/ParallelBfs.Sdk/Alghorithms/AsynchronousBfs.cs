@@ -41,12 +41,8 @@
                 if (nodesToBeVisited.TryDequeue(out nodeToVisit) && NotAlreadyVisited(nodeToVisit))
                 {
                     MarkAsVisited(nodeToVisit);
-
-                    Task.Run(() => VisitNode(matrix, nodeToVisit))
-                        .ContinueWith((result) =>
-                        {
-                            System.Console.WriteLine(nodeToVisit);
-                        });
+                    
+                    Task.Run(() => VisitNode(matrix, nodeToVisit));
                 }
             }
         }
