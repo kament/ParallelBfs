@@ -16,7 +16,7 @@
             this.visitedNodes = new HashSet<int>();
         }
 
-        public Task<bool> Traverse(AdjacencyMatrix matrix)
+        public Task<bool> Search(AdjacencyMatrix matrix)
         {
             this.nodesToBeVisited.Enqueue(0);
 

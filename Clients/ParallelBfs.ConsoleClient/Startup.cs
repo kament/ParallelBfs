@@ -46,7 +46,7 @@
         private static async Task<bool> TraverseMatrix(AdjacencyMatrix matrix)
         {
             SynchronousBfs bfsAlghorithm = new SynchronousBfs();
-            bool result = await bfsAlghorithm.Traverse(matrix);
+            bool result = await bfsAlghorithm.Search(matrix);
 
             return result;
         }
