@@ -2,7 +2,6 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-    using System.Threading.Tasks;
 
     using Helpers;
 
@@ -19,13 +18,13 @@
             this.visitedNodes = new HashSet<int>();
         }
 
-        public Task<bool> Search(AdjacencyMatrix matrix)
+        public bool Search(AdjacencyMatrix matrix)
         {
             Bfs(matrix);
 
             bool allNodesVisited = this.visitedNodes.Count == matrix.NodesCount();
 
-            return Task.FromResult(allNodesVisited);
+            return allNodesVisited;
         }
 
         private void Bfs(AdjacencyMatrix matrix)

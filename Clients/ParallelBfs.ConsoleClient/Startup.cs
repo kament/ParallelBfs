@@ -18,7 +18,7 @@
 
             DateTime start = DateTime.UtcNow;
 
-            bool result = TraverseMatrix(matrix).Result;
+            bool result = TraverseMatrix(matrix);
 
             DateTime end = DateTime.UtcNow;
 
@@ -43,10 +43,10 @@
             Console.WriteLine($"Traverse finish for {totalMiliseconds} miliseconds, with status {resultStatus}");
         }
 
-        private static async Task<bool> TraverseMatrix(AdjacencyMatrix matrix)
+        private static bool TraverseMatrix(AdjacencyMatrix matrix)
         {
             SynchronousBfs bfsAlghorithm = new SynchronousBfs();
-            bool result = await bfsAlghorithm.Search(matrix);
+            bool result = bfsAlghorithm.Search(matrix);
 
             return result;
         }
