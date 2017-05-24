@@ -1,6 +1,5 @@
 ﻿namespace ParallelBfs.Sdk
 {
-    using System;
     using System.Collections.Generic;
 
     public class AdjacencyMatrix
@@ -21,7 +20,20 @@
 
         internal IEnumerable<int> Neighbours(int nodeToVisit)
         {
-            throw new NotImplementedException();
+            List<bool> neighboursNodes = matrix[nodeToVisit];
+
+            for (int nodeId = 0; nodeId < neighboursNodes.Count; nodeId++)
+            {
+                if(IsNeighbour(neighboursNodes, nodeId))
+                {
+                    yield return nodeId;
+                }
+            }
+        }
+
+        private bool IsNeighbour(List<bool> neighboursNodes, int nodeId)
+        {
+            return neighboursNodes[nodeId];
         }
     }
 }

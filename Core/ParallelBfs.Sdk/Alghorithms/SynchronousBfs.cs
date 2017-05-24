@@ -18,6 +18,15 @@
 
         public Task<bool> Search(AdjacencyMatrix matrix)
         {
+            Bfs(matrix);
+
+            bool allNodesVisited = this.visitedNodes.Count == matrix.NodesCount();
+
+            return Task.FromResult(allNodesVisited);
+        }
+
+        private void Bfs(AdjacencyMatrix matrix)
+        {
             this.nodesToBeVisited.Enqueue(0);
 
             while (nodesToBeVisited.Count != 0)
@@ -33,8 +42,6 @@
                     AddAllNeighboursToTheQueue(neighbourNodes);
                 }
             }
-
-            return Task.FromResult(true);
         }
 
         private void AddAllNeighboursToTheQueue(IEnumerable<int> neighbourNodes)
@@ -51,7 +58,7 @@
         {
             bool visited = this.visitedNodes.Contains(nodeToVisit);
 
-            return visited;
+            return !visited;
         }
     }
 }
