@@ -7,6 +7,8 @@
 
     public class SynchronousBfs
     {
+        private const int StartNode = 0;
+
         private Queue<int> nodesToBeVisited;
         private HashSet<int> visitedNodes;
 
@@ -27,7 +29,7 @@
 
         private void Bfs(AdjacencyMatrix matrix)
         {
-            this.nodesToBeVisited.Enqueue(0);
+            this.nodesToBeVisited.Enqueue(StartNode);
 
             while (nodesToBeVisited.Count != 0)
             {
