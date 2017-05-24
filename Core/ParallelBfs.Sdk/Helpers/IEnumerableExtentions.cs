@@ -1,4 +1,4 @@
-﻿namespace ParallelBfs.Sdk
+﻿namespace ParallelBfs.Sdk.Helpers
 {
     using System;
     using System.Collections.Generic;
