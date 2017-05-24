@@ -27,7 +27,7 @@
 
         private static AdjacencyMatrix CreateMetrix()
         {
-            IUserInput input = new FileUserInput("C:\\Users\\Kamen\\Desktop\\RSA\\ParallelBfs\\ParallelBfs\\TestFiles\\Test3.txt");
+            IUserInput input = new FileUserInput("C:\\Users\\Kamen\\Desktop\\RSA\\ParallelBfs\\ParallelBfs\\TestFiles\\Test1.txt");
 
             AdjacencyMatrixFactory factory = new AdjacencyMatrixFactory();
             AdjacencyMatrix matrix = factory.Create(input);

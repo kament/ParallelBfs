@@ -1,6 +1,7 @@
 ﻿namespace ParallelBfs.Sdk
 {
     using System.Collections.Generic;
+    using System.Threading;
 
     public class AdjacencyMatrix
     {
@@ -20,6 +21,7 @@
 
         internal IEnumerable<int> Neighbours(int nodeToVisit)
         {
+            Thread.Sleep(1000);
             List<bool> neighboursNodes = matrix[nodeToVisit];
 
             for (int nodeId = 0; nodeId < neighboursNodes.Count; nodeId++)
